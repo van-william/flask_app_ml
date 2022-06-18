@@ -54,8 +54,8 @@ def predict():
 
     body = str.encode(json.dumps(data))
 
-    url = 'http://c79082c8-8231-4292-9013-e13eb1af7f82.eastus.azurecontainer.io/score'
-    api_key = '' # Replace this with the API key for the web service
+    url = 'http://3cbc4439-5001-4b6d-b704-adbfd1c79dd0.eastus.azurecontainer.io/score'
+    api_key = ML_APP_KEY # Replace this with the API key for the web service
 
     # The azureml-model-deployment header will force the request to go to a specific deployment.
     # Remove this header to have the request observe the endpoint traffic rules
