@@ -6,6 +6,8 @@ import os
 import ssl
 from numpy import diag
 ML_APP_KEY = os.environ['ML_APP_KEY']
+TEST_ENV = os.environ['WEBSITE_SITE_NAME']
+print(TEST_ENV)
 print(ML_APP_KEY)
 print(json.dumps({**{}, **os.environ}, indent=2))
 def allowSelfSignedHttps(allowed):
