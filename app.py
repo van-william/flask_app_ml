@@ -4,10 +4,9 @@ import urllib.request
 import json
 import os
 import ssl
-import random
-
 from numpy import diag
 
+ML_APP_KEY = FOO = os.getenv('ML_APP_KEY')
 def allowSelfSignedHttps(allowed):
     # bypass the server certificate verification on client side
     if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
