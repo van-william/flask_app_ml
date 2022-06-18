@@ -5,8 +5,9 @@ import json
 import os
 import ssl
 from numpy import diag
-ML_APP_KEY = os.environ.get('ML_APP_KEY')
+ML_APP_KEY = os.environ['ML_APP_KEY']
 print(ML_APP_KEY)
+print(json.dumps({**{}, **os.environ}, indent=2))
 def allowSelfSignedHttps(allowed):
     # bypass the server certificate verification on client side
     if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
