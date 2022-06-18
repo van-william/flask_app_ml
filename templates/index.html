@@ -11,25 +11,26 @@
   
 </head>
 
-<body style="background-color:#8c03fc;">
+<body style="background-color:#0384fc;">
  <div class="login">
-	<h1><i>Predict Flowers</i></h1>
+	<h1><i style="color:rgb(204, 206, 217);">Orthopedic Predictions</i></h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="sepal length (cm)" placeholder="sepal length" required="required" />
-        <input type="text" name="sepal width (cm)" placeholder="sepal width" required="required" />
-		<input type="text" name="petal length (cm)" placeholder="petal length" required="required" />
-        <input type="text" name="petal width (cm)" placeholder="petal width" required="required" />
-
+    	<input type="text" name="pelvic_incidence" placeholder="Pelvic Incidence" required="required" />
+      <input type="text" name="pelvic_tilt" placeholder="Pelvic Tilt" required="required" />
+		  <input type="text" name="lumbar_lordosis_angle" placeholder="Lumbar Lordosis Angle" required="required" />
+      <input type="text" name="sacral_slope" placeholder="Sacral Slope" required="required" />
+      <input type="text" name="pelvic_radius" placeholder="Pelvic Radius" required="required" />
+      <input type="text" name="degree_spondylolisthesis" placeholder="Degree Spondylolisthesis" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
-
+    
    <br>
    <br>
-   {{ prediction_text }}
-
+   <i style="color:rgb(204, 206, 217);">{{ prediction_text }}</i>
+      
  </div>
 
 
