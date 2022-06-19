@@ -9,13 +9,13 @@ ML_APP_KEY = os.environ['ML_APP_KEY']
 TEST_ENV = os.environ['WEBSITE_SITE_NAME']
 print(TEST_ENV)
 print(ML_APP_KEY)
-print(json.dumps({**{}, **os.environ}, indent=2))
+
 def allowSelfSignedHttps(allowed):
     # bypass the server certificate verification on client side
     if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
         ssl._create_default_https_context = ssl._create_unverified_context
 
-allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+#allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
 
 
 #naming our app as app
