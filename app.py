@@ -1,7 +1,6 @@
 #importing the necessary libraries for deployment
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, request, render_template
 import os
-import pickle
 from ml_api import predict_ml, predict_tf
 
 
