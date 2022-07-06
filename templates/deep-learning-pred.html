@@ -10,10 +10,10 @@
 
   <body>
   <div class="login">
-    <h1><i>Orthopedic Predictions</i></h1>
+    <h1><i>Deep Learning Orthopedic Predictions</i></h1>
 
       <!-- Main Input For Receiving Query to our ML -->
-      <form action="{{ url_for('predict')}}"method="post">
+      <form action="{{ url_for('deep_learning_pred_output')}}"method="post">
         <input type="text" name="pelvic_incidence" placeholder="Pelvic Incidence" required="required" />
         <input type="text" name="pelvic_tilt" placeholder="Pelvic Tilt" required="required" />
         <input type="text" name="lumbar_lordosis_angle" placeholder="Lumbar Lordosis Angle" required="required" />
@@ -26,12 +26,11 @@
       
     <br>
     <br>
-    <i style="color:rgb(40, 40, 40);">{{ prediction_text }}</i>
+    <i style="color:rgb(204, 206, 217);">{{ prediction_text }}</i>
         
   </div>
 
-<i>Example Diagnosis Inputs</i>
-<br>
+
   <table class="table">
     <thead>
     <tr>

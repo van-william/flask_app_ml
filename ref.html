@@ -1,3 +1,7 @@
+
+
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
 <!DOCTYPE html>
 <html >
 {% extends 'base.html' %}
@@ -5,12 +9,18 @@
 
 
   <head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     
   </head>
 
-  <body>
+  <body style="background-color:#0384fc;">
   <div class="login">
-    <h1><i>Orthopedic Predictions</i></h1>
+    <h1><i style="color:rgb(204, 206, 217);">Orthopedic Predictions</i></h1>
 
       <!-- Main Input For Receiving Query to our ML -->
       <form action="{{ url_for('predict')}}"method="post">
@@ -26,51 +36,11 @@
       
     <br>
     <br>
-    <i style="color:rgb(40, 40, 40);">{{ prediction_text }}</i>
+    <i style="color:rgb(204, 206, 217);">{{ prediction_text }}</i>
         
   </div>
 
-<i>Example Diagnosis Inputs</i>
-<br>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Class</th>
-      <th>Pelvic Incidence</th>
-      <th>Pelvic Tilt</th>
-      <th>Lumbar Lordosis Angle</th>
-      <th>Sacral Slope</th>
-      <th>Pelvic Radius</th>
-      <th>Degree Spondylolisthesis</th>
-    </tr>
-    <tr>
-      <td>Normal</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>Hernia</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <td>Spondylolisthesis</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-    </tr>
-  </table>
+  <i style="color:rgb(204, 206, 217);">TEST TEXT</i>
 
 
 
