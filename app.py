@@ -1,8 +1,7 @@
 #importing the necessary libraries for deployment
 from flask import Flask, request, render_template
 import os
-from ml_api import predict_ml, predict_tf
-
+from ml_api import predict_azure, predict_sk
 
 ML_APP_KEY = os.getenv('ML_APP_KEY')
 TEST_ENV = os.getenv('WEBSITE_SITE_NAME')
@@ -29,23 +28,15 @@ def deep_learning_overview():
 
 @app.route("/data_context")
 def data_context():
-    return render_template("data_overview.html")
+    return render_template("EDA.html")
 
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    form_input = dict(request.form)
-    diagnosis = predict_ml(ortho_dict = form_input, url = ml_url, api_key =  ML_APP_KEY)
+    diagnosis = predict_sk(request,dir='static/models/sk_model/model.pkl')
+    #diagnosis = predict_azure(request, url = ml_url, api_key =  ML_APP_KEY)
+    #Originally, an Azure Machine Learning Environment was used to serve the model
     return render_template("index.html", prediction_text= "Diagnosis is {}".format(diagnosis))
-
-@app.route('/predict_deep')
-def deep_learning_pred():
-    return render_template("deep-learning-pred.html")
-
-@app.route('/predict_deep_output',methods=['POST'])
-def deep_learning_pred_output():
-    diagnosis = predict_tf(request)
-    return render_template("deep-learning-pred.html", prediction_text= "Diagnosis is {}".format(diagnosis))
 
 @app.errorhandler(404)
 def page_not_found(e):

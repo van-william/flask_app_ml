@@ -2,13 +2,15 @@ import urllib.request
 import json
 import ssl
 import os
-import tensorflow as tf
+#import tensorflow as tf #removed to save space in Heroku
 import numpy as np
-tf.get_logger().setLevel('FATAL')
+import joblib
+
+#tf.get_logger().setLevel('FATAL')
 
 from sympy import diag
 
-def predict_ml(ortho_dict, url, api_key):
+def predict_azure(request, url, api_key):
     # Request data goes here
     # The example below assumes JSON formatting which may be updated
     # depending on the format your endpoint expects.
@@ -19,6 +21,7 @@ def predict_ml(ortho_dict, url, api_key):
         if allowed and not os.environ.get('PYTHONHTTPSVERIFY', '') and getattr(ssl, '_create_unverified_context', None):
             ssl._create_default_https_context = ssl._create_unverified_context
     #allowSelfSignedHttps(True) # this line is needed if you use self-signed certificate in your scoring service.
+    ortho_dict = dict(request.form)
     data =  {
     "Inputs": {
         "data": [
@@ -61,16 +64,20 @@ def predict_ml(ortho_dict, url, api_key):
         print(error.read().decode("utf8", 'ignore'))
     return diagnosis
 
+#NOTE: tensorflow module was commented out to reduce flask app size
+#def predict_tf(request, dir='static/models/tf_model'):
+    #deep_model = tf.keras.models.load_model(dir)
+    #decoder = {'Normal': 0, 'Hernia':1, 'Spondylolisthesis':2 }
+    #features = [float(x) for x in request.form.values()]
+    #tf_feature = tf.convert_to_tensor([np.array(features)])
+    #prediction = deep_model.predict(tf_feature)
+    #value = np.argmax(prediction, axis=1)
+    #diagnosis = list(decoder.keys())[list(decoder.values()).index(value)]
+    #return diagnosis
 
-def predict_tf(request, dir='static/models/tf_model'):
-    deep_model = tf.keras.models.load_model(dir)
-    decoder = {'Normal': 0, 'Hernia':1, 'Spondylolisthesis':2 }
-    int_features = [float(x) for x in request.form.values()]
-    print(int_features)
-    tf_feature = tf.convert_to_tensor([np.array(int_features)])
-    print(tf_feature)
-    prediction = deep_model.predict(tf_feature)
-    print(prediction)
-    value = np.argmax(prediction, axis=1)
-    diagnosis = list(decoder.keys())[list(decoder.values()).index(value)]
-    return diagnosis
+
+def predict_sk(request,dir='static/models/sk_model/model.pkl'):
+    clf = joblib.load(dir)
+    features = [float(x) for x in request.form.values()]
+    prediction = clf.predict(features)
+    return prediction
