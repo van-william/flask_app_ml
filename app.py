@@ -20,16 +20,24 @@ app= Flask(__name__)
 def home():
     return render_template("index.html")
 
-@app.route("/jupyter")
-def jupyter():
-    return render_template("jupyter.html")
+@app.route("/azure_pipeline")
+def azure_pipeline():
+    return render_template("azure-pipeline.html")
+
+@app.route("/data_context")
+def about():
+    return render_template("about.html")
+
+@app.route("/model_overview")
+def machine_learning():
+    return render_template("machine-learning.html")
 
 @app.route("/deep_learning")
 def deep_learning_overview():
     return render_template("deep-learning.html")
 
-@app.route("/data_context")
-def data_context():
+@app.route("/exploratory_data_analysis")
+def eda():
     return render_template("EDA.html")
 
 

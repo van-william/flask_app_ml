@@ -2,6 +2,14 @@ h1 {
     color: darkblue;
     font-size:20px;
 }
+
+h2.prediction {
+    color: darkblue;
+    font-size:14px;
+    font-weight:bold;
+}
+
+
 body {
     background: #f4f4f4;
 }
@@ -11,4 +19,12 @@ body {
 }
 a.nav-link {
     font-size: 14px
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }

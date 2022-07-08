@@ -26,54 +26,60 @@
       
     <br>
     <br>
-    <i style="color:rgb(40, 40, 40);">{{ prediction_text }}</i>
+    <h2 class="prediction">{{ prediction_text }}</h2>
     <br>
     <br>
   </div>
 
 <i>Example Diagnosis Inputs</i>
 <br>
+<div style = "overflow-x:auto;">
   <table class="table">
     <thead>
     <tr>
-      <th>Class</th>
-      <th>Pelvic Incidence</th>
-      <th>Pelvic Tilt</th>
-      <th>Lumbar Lordosis Angle</th>
-      <th>Sacral Slope</th>
-      <th>Pelvic Radius</th>
-      <th>Degree Spondylolisthesis</th>
+      <th>Features</th>
+      <th>Normal</th>
+      <th>Hernia</th>
+      <th>Spondylolisthesis</th>
     </tr>
     <tr>
-      <td>Normal</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
+      <td>Pelvic Incidence</td>
+      <td>44.4</td>
+      <td>36.7</td>
+      <td>74.4</td>
     </tr>
     <tr>
-      <td>Hernia</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
+      <td>Pelvic Tilt</td>
+      <td>14.2</td>
+      <td>5.0</td>
+      <td>32.1</td>
     </tr>
     <tr>
-      <td>Spondylolisthesis</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
-      <td>10</td>
+      <td>Lumbar Lordosis Angle</td>
+      <td>32.2</td>
+      <td>41.9</td>
+      <td>78.8</td>
+    </tr>
+    <tr>
+      <td>Sacral Slope</td>
+      <td>30.3</td>
+      <td>31.7</td>
+      <td>42.3</td>
+    </tr>
+    <tr>
+      <td>Pelvic Radius</td>
+      <td>131.7</td>
+      <td>84.2</td>
+      <td>143.6</td>
+    </tr>
+    <tr>
+      <td>Degree Spondylolisthesis</td>
+      <td>-3.6</td>
+      <td>0.7</td>
+      <td>56.1</td>
     </tr>
   </table>
-
-
+</div>
 
   </body>
 {% endblock %}
