@@ -4,11 +4,7 @@ import ssl
 import os
 #import tensorflow as tf #removed to save space in Heroku
 import numpy as np
-
-
 #tf.get_logger().setLevel('FATAL')
-
-from sympy import diag
 
 def predict_azure(request, url, api_key):
     # Request data goes here
