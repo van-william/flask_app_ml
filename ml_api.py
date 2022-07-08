@@ -73,10 +73,11 @@ def predict_azure(request, url, api_key):
     #return diagnosis
 
 
-def predict_sk(request, model):
+def predict_sk(request, model, scaler):
     
     features = [float(x) for x in request.form.values()]
     inputs = np.asarray(features).reshape((1, -1))
-    prediction = model.predict(inputs)
+    scaled_inputs = scaler.transform(inputs)
+    prediction = model.predict(scaled_inputs)
     output = prediction[0]
     return output

@@ -5,7 +5,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Medium-Ortho-ML_Overview--EDA Only</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>exploratory_data_analysis</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -5047,7 +5047,6 @@ table.bp3-html-table.bp3-interactive tbody tr:hover td{
 table.bp3-html-table.bp3-interactive tbody tr:active td{
   background-color:rgba(191, 204, 214, 0.4); }
 
-.bp3-dark table.bp3-html-table{ }
   .bp3-dark table.bp3-html-table.bp3-html-table-striped tbody tr:nth-child(odd) td{
     background:rgba(92, 112, 128, 0.15); }
   .bp3-dark table.bp3-html-table.bp3-html-table-bordered th:not(:first-child){
@@ -6664,7 +6663,6 @@ span.bp3-icon:empty{
 
 .bp3-submenu .bp3-popover-target{
   display:block; }
-  .bp3-submenu .bp3-popover-target.bp3-popover-open > .bp3-menu-item{ }
 
 .bp3-submenu.bp3-popover{
   -webkit-box-shadow:none;
@@ -6905,7 +6903,6 @@ button.bp3-menu-item{
   background:#30404d;
   color:#f5f8fa; }
 
-.bp3-dark .bp3-menu-item{ }
   .bp3-dark .bp3-menu-item.bp3-intent-primary{
     color:#48aff0; }
     .bp3-dark .bp3-menu-item.bp3-intent-primary .bp3-icon{
@@ -11584,7 +11581,6 @@ body.lm-mod-override-cursor * {
   background-color: #f7f7f7;
   white-space: nowrap;
 }
-.CodeMirror-linenumbers {}
 .CodeMirror-linenumber {
   padding: 0 3px 0 5px;
   min-width: 20px;
@@ -11646,7 +11642,6 @@ body.lm-mod-override-cursor * {
 }
 
 /* Can style cursor different in overwrite (non-insert) mode */
-.CodeMirror-overwrite .CodeMirror-cursor {}
 
 .cm-tab { display: inline-block; text-decoration: inherit; }
 
@@ -11676,10 +11671,6 @@ body.lm-mod-override-cursor * {
 .cm-s-default .cm-atom {color: #219;}
 .cm-s-default .cm-number {color: #164;}
 .cm-s-default .cm-def {color: #00f;}
-.cm-s-default .cm-variable,
-.cm-s-default .cm-punctuation,
-.cm-s-default .cm-property,
-.cm-s-default .cm-operator {}
 .cm-s-default .cm-variable-2 {color: #05a;}
 .cm-s-default .cm-variable-3, .cm-s-default .cm-type {color: #085;}
 .cm-s-default .cm-comment {color: #a50;}
@@ -11832,7 +11823,6 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #a22;}
   padding: 0.1px; /* Force widget margins to stay inside of the container */
 }
 
-.CodeMirror-widget {}
 
 .CodeMirror-rtl pre { direction: rtl; }
 
@@ -12688,11 +12678,7 @@ span.CodeMirror-selectedtext { background: none; }
 [data-jp-theme-light='true'] .jp-RenderedImage img.jp-needs-dark-background {
   background-color: var(--jp-inverse-layout-color1);
 }
-/* ...or leave it untouched if they don't */
-[data-jp-theme-light='false'] .jp-RenderedImage img.jp-needs-dark-background {
-}
-[data-jp-theme-light='true'] .jp-RenderedImage img.jp-needs-light-background {
-}
+/* ...or leave it untouched if they don't *
 
 .jp-RenderedHTMLCommon img,
 .jp-RenderedImage img,
@@ -13140,8 +13126,6 @@ h6:hover .jp-InternalAnchorLink {
 | Private CSS variables
 |----------------------------------------------------------------------------*/
 
-:root {
-}
 
 /*-----------------------------------------------------------------------------
 | Main OutputArea
@@ -14341,7 +14325,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 
   /* Notebook specific styles */
 
-  --jp-notebook-padding: 0px;
+  --jp-notebook-padding: 10px;
   --jp-notebook-select-background: var(--jp-layout-color1);
   --jp-notebook-multiselected-color: var(--md-blue-50);
 
@@ -14457,6 +14441,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <style type="text/css">
 /* Force rendering true colors when outputing to pdf */
 * {
+  print-color-adjust: exact;
   -webkit-print-color-adjust: exact;
 }
 
@@ -14580,19 +14565,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Ortho-Dataset-Multiclass-Classification">Ortho Dataset Multiclass Classification<a class="anchor-link" href="#Ortho-Dataset-Multiclass-Classification">&#182;</a></h1><p><strong>Goal</strong> - Create similar model outputs to Automated ML and Designer with coded examples</p>
-<p>Outline of Notebook</p>
-<ul>
-<li>Import Libraries and Initial Setup</li>
-<li>(Optional) Create datastore and upload dataset from UCI ML datasets directly on notebooks</li>
-<li>Load dataset and perform initial exploratory data analysis</li>
-<li>Prepare data for model</li>
-<li>Train model and understand performance with test dataset</li>
-<li>Next Steps</li>
-</ul>
-<h2 id="Notes-and-References">Notes and References<a class="anchor-link" href="#Notes-and-References">&#182;</a></h2><ul>
+<h1 id="Orthopedics-Dataset---Exploratory-Data-Analysis">Orthopedics Dataset - Exploratory Data Analysis<a class="anchor-link" href="#Orthopedics-Dataset---Exploratory-Data-Analysis">&#182;</a></h1><h2 id="Notes-and-References">Notes and References<a class="anchor-link" href="#Notes-and-References">&#182;</a></h2><ul>
 <li>Link to Source Data: <a href="http://archive.ics.uci.edu/ml/datasets/vertebral+column">http://archive.ics.uci.edu/ml/datasets/vertebral+column</a></li>
-<li>Link to additional inforamtion on GitHub: <a href="https://github.com/van-william/azure-ml-demo">https://github.com/van-william/azure-ml-demo</a></li>
+<li>Link to additional azure inforamtion on GitHub: <a href="https://github.com/van-william/azure-ml-demo">https://github.com/van-william/azure-ml-demo</a></li>
+<li>Link to additional web app inforamtion: <a href="https://github.com/van-william/flask_app_ml/tree/main/notebooks">https://github.com/van-william/flask_app_ml/tree/main/notebooks</a></li>
 </ul>
 
 </div>
@@ -14669,24 +14645,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Create-Datastore-and-Upload-Dataset">Create Datastore and Upload Dataset<a class="anchor-link" href="#Create-Datastore-and-Upload-Dataset">&#182;</a></h1><ul>
-<li>We've already walked through how to extract the ortho data from UCI datasets, but the code below shows how to extract the data directly from the web</li>
-<li>This provides the opportunity for additional automation and functionality with a wider range of datasets</li>
-<li>The code block belows downloads the zip file of the files and then unzips it to the current directory.  Later the files are read in as a pandas dataframe</li>
-<li>We'll later push register these files to a datastore and later a dataset.</li>
-<li>If you want to skip ahead, you can also read in the existing ortho dataset from the dataset module</li>
-</ul>
-
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
