@@ -4,6 +4,7 @@ import ssl
 import os
 #import tensorflow as tf #removed to save space in Heroku
 import numpy as np
+import sklearn
 #tf.get_logger().setLevel('FATAL')
 
 def predict_azure(request, url, api_key):
