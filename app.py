@@ -2,12 +2,14 @@
 from flask import Flask, request, render_template
 import os
 from ml_api import predict_azure, predict_sk
+import joblib
 
 ML_APP_KEY = os.getenv('ML_APP_KEY')
 TEST_ENV = os.getenv('WEBSITE_SITE_NAME')
 ml_url = 'http://3cbc4439-5001-4b6d-b704-adbfd1c79dd0.eastus.azurecontainer.io/score'
+sk_dir='static/models/sk_model/model.pkl'
 
-
+clf = joblib.load(sk_dir)
 
 #naming our app as app
 app= Flask(__name__)
@@ -33,7 +35,7 @@ def data_context():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    diagnosis = predict_sk(request,dir='static/models/sk_model/model.pkl')
+    diagnosis = predict_sk(request, model = clf)
     #diagnosis = predict_azure(request, url = ml_url, api_key =  ML_APP_KEY)
     #Originally, an Azure Machine Learning Environment was used to serve the model
     return render_template("index.html", prediction_text= "Diagnosis is {}".format(diagnosis))

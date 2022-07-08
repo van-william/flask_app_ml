@@ -4,7 +4,7 @@ import ssl
 import os
 #import tensorflow as tf #removed to save space in Heroku
 import numpy as np
-import joblib
+
 
 #tf.get_logger().setLevel('FATAL')
 
@@ -76,8 +76,10 @@ def predict_azure(request, url, api_key):
     #return diagnosis
 
 
-def predict_sk(request,dir='static/models/sk_model/model.pkl'):
-    clf = joblib.load(dir)
+def predict_sk(request, model):
+    
     features = [float(x) for x in request.form.values()]
-    prediction = clf.predict(features)
-    return prediction
+    inputs = np.asarray(features).reshape((1, -1))
+    prediction = model.predict(inputs)
+    output = prediction[0]
+    return output
