@@ -26,7 +26,7 @@ def home():
 def azure_pipeline():
     return render_template("azure-pipeline.html")
 
-@app.route("/data_context")
+@app.route("/about")
 def about():
     return render_template("about.html")
 

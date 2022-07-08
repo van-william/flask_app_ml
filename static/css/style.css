@@ -26,3 +26,8 @@ header {
     left: 0;
     z-index: 10;
 }
+
+img.architecture {
+    max-width: 100%;
+    max-height: 100%;
+}
