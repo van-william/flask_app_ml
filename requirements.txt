@@ -3,3 +3,6 @@ numpy==1.22.4
 joblib
 gunicorn
 scikit-learn
+# NOTE: tensorflow library was too big for the free deployment size for Heroku
+# tensorflow
+liac-arff
