@@ -17,7 +17,7 @@ This web app provides a simple summary of using a variety of machine learning mo
 - There is a notebook for Deep Learning (Tensorflow), but the library was too big for the free version of Heroku.  However, the machine learning code is still referenced
 
 ## Architecture Overview
-![Architecture Overview] (https://github.com/van-william/flask_app_ml/blob/main/static/images/architecture.PNG)
+![Architecture Overview](https://github.com/van-william/flask_app_ml/blob/main/static/images/architecture.PNG)
 
 ## References
 - I leveraged this detailed [Flask tutorial](https://www.youtube.com/playlist?list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz) for help in building the web page
