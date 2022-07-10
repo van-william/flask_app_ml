@@ -1,5 +1,6 @@
 # Machine Learning Web App Using Flask
 This web app provides a simple summary of using a variety of machine learning models (Sklearn, Tensorflow, and Azure Machine Learning) deployed to a python web app (Flask)
+- Web App Link: https://python-ml-web-app-orthopedics.herokuapp.com/
 
 
 ## How to Use
@@ -8,7 +9,7 @@ This web app provides a simple summary of using a variety of machine learning mo
 - Leverage the simple web framework (html + css) for your own web app projects
 
 ## Web App Hosting
-- This project is hosted on Heroku
+- This project is hosted on Heroku: https://python-ml-web-app-orthopedics.herokuapp.com/
 - The repository contains context on the necessary Profile, runtime.txt, and other required files for Heroku hosting
 
 ## Model Deployment
